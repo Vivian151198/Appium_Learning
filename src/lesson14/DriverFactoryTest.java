@@ -1,10 +1,9 @@
 package lesson14;
 
+import driver.DriverFactory;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
-import io.appium.java_client.service.local.AppiumDriverLocalService;
 
-import javax.swing.plaf.metal.MetalBorders;
 import java.util.List;
 
 public class DriverFactoryTest {
@@ -36,7 +35,7 @@ public class DriverFactoryTest {
             //Some Xpath
             /**
              * //*[contains(@text, 'When the device')]
-             * new UiSelector().textContains("When the device").classname("android.widget.Textview")
+             * new UiSelector().textContains("When the device").className("android.widget.TextView")
              */
             MobileElement loginFeatureDesElem = androidDriver.findElementByXPath("//*[contains(@text, 'When the device')]");
             String loginFeatureDes = loginFeatureDesElem.getText();
@@ -45,6 +44,10 @@ public class DriverFactoryTest {
             MobileElement loginFeatureDesElemUiSelector = androidDriver.findElementByAndroidUIAutomator("new UiSelector().textContains(\"When the device\").className(\"android.widget.TextView\")");
             String loginFeatureDesViaUi = loginFeatureDesElemUiSelector.getText();
             System.out.println(loginFeatureDesViaUi);
+
+            List<MobileElement> matchesCard;
+            matchesCard = androidDriver.findElementsByAccessibilityId("WebdriverIO logo");
+
 
         } catch (Exception ignored) {
         } finally {
