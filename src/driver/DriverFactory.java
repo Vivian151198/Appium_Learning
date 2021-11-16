@@ -1,4 +1,4 @@
-package lesson14;
+package driver;
 
 import caps.MobileCapabilityTypeEx;
 import io.appium.java_client.AppiumDriver;
@@ -44,7 +44,7 @@ public class DriverFactory {
         desiredCapabilities.setCapability(MobileCapabilityTypeEx.NEW_COMMAND_TIMEOUT, 120);
 
         androidDriver = new AndroidDriver<>(appiumServer.getUrl(), desiredCapabilities);
-        androidDriver.manage().timeouts().implicitlyWait(30L, TimeUnit.SECONDS);
+        androidDriver.manage().timeouts().implicitlyWait(2L, TimeUnit.SECONDS);
         return androidDriver;
     }
 }
