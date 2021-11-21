@@ -18,9 +18,9 @@ public class HandleHypericContext {
             MobileElement webViewLabelElem = appiumDriver.findElementByAccessibilityId("Webview");
             webViewLabelElem.click();
 
-            appiumDriver.getContextHandles().forEach(context -> {
-                System.out.println(context);
-            });
+//            appiumDriver.getContextHandles().forEach(context -> {
+//                System.out.println(context);
+//            });
 
         appiumDriver.context("WEBVIEW_com.wdiodemoapp");
         WebElement naviToggleBtnElem = appiumDriver.findElementByCssSelector(".navbar__toggle");
